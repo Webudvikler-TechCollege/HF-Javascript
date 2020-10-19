@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Rest Parameter</title>
+    <link rel="shortcut icon" href="#">
+</head>
+<body>
+    <h1>Rest Parameter</h1>
+    <p>I kildekoden kan du se hvordan man bruger et rest parameter.</p>
+
+</body>
+
+<script>
+    // Function til at liste en klasse og dens elever med
+    // Tager 2 parametre - et klassenavn og et rest parameter af elevernes fornavn
+    function list(className, ...students) {
+        console.log(className);
+        //console.log(students);
+        for(let n of students) {
+            console.log(n);
+        }
+    }
+
+    console.log(list('H1WE080120', 'Bo', 'Per', 'Lise', 'Hanne'));
+
+    console.log(list('H1WE080119', 'Michael', 'Trine', 'Jens', 'Peter'));
+
+</script>  
+</html>

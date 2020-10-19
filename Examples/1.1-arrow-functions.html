@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Arrow Functions</title>
+    <link rel="shortcut icon" href="#">
+</head>
+<body>
+  <h1>Arrow functions</h1>
+  <p>I kildekoden kan du se forskellen på en traditionel function og en arrow function.</p>
+
+
+</body>
+
+<script>
+
+window.age = 10; // <-- Variabel sat på window object
+
+function Person() {
+  this.age = 42; // <-- Variabel sat i function
+
+  // Traditional funktion bliver eksekveret i et window scope
+  setTimeout(function () { 
+    console.log("this.age med traditionel funktion", this.age);
+  }, 100);
+
+  // Arrow function eksekverer i instansens scope
+  setTimeout(() => { 
+    console.log("this.age med arrow funktion", this.age);
+  }, 100);  
+}
+
+// Kalder instans af Person()
+let p = new Person();
+
+</script>  
+</html>

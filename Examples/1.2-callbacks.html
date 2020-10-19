@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Callbacks</title>
+    <link rel="shortcut icon" href="#">
+</head>
+<body>
+    <h1>Callbacks</h1>
+    <p>I kildekoden kan du se hvordan man bruger callbacks.</p>
+
+</body>
+
+<script>
+
+    // Funktion til at brygge kaffe med
+    // det tager 500 milisekunder
+    function doBrew(type) {
+        setTimeout(function() { console.log('Uden callback: Brygger en ' + type)}, 500)
+    }
+
+    // Funktion til at fortælle at kaffen er færdig med   
+    function endBrewMessage(type = 'kaffe') {
+        console.log('Din ' + type + ' er klar!');
+    }
+
+    // UDEN CALLBACK
+    // Kalder først bryg funktionen og derefter færdig funktionen
+    // Problemet her er at at kaffen er færdig før den er brygget
+    doBrew('Cappucino');
+    endBrewMessage('Cappucino');
+
+    // Funktion hvor endMessage funktionen sendes med som callback
+    // Dermed kan vi selv bestemme hvornår den skal kaldes i funktionen 
+    function doBrewWithCallback(type, callback) {
+        console.log('Callback: Brygger en ' + type);
+        setTimeout(callback(type), 500);
+    }    
+    
+    // MED CALLBACK
+    doBrewWithCallback('expresso', endBrewMessage);
+</script>  
+</html>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Spread Operator</title>
+    <link rel="shortcut icon" href="#">
+</head>
+<body>
+    <h1>Spread Operator</h1>
+    <p>I kildekoden kan du se hvordan man bruger en spread operator.</p>
+
+</body>
+
+<script>
+    // Eksempel på at bruge spread til at merge to arrays
+
+    // Array med piger
+    let girls = ['Trine', 'Pia', 'Lise', 'Hanne'];
+    // Array med drenge
+    let boys = ['Bo', 'Per', 'John', 'Jesper'];
+    // Array med elever
+    let students = [...girls, ...boys];
+    // Udskriv resultat
+    console.log(students);
+
+    // Eksempel på at bruge spread til at udvide et array i et funktionskald
+
+    // Array med data
+    let student = ['Jens', '1988-08-12', '9000']
+    // Funktion til at udskrive data
+    function listStudentData(name, birthdate, zip) {
+        console.log(`Name: ${name}\nBirthdate: ${birthdate}\nZip: ${zip}`);
+    }
+    // Funktionskald
+    listStudentData(...student);
+
+</script>  
+</html>
