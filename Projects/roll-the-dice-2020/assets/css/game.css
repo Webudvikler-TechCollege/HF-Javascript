@@ -1,0 +1,119 @@
+#gameboard {
+  overflow: auto;
+}
+
+#gameboard div {
+  font-size: 80pt;
+  text-align: center;
+  float: left;
+  margin-right: 100px;
+}
+
+#gameboard:last-child {
+  clear: both;
+}
+
+button {
+  width: 100%;
+  font-weight: bold;
+  font-size: 20pt;
+  padding: 10px;
+  border-radius: 3px;
+  background: #00ffff;
+  cursor: pointer;
+}
+
+@-webkit-keyframes dice {
+  0% {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+  }
+  10% {
+    -webkit-transform: rotate(120deg);
+            transform: rotate(120deg);
+  }
+  20% {
+    -webkit-transform: rotate(10deg);
+            transform: rotate(10deg);
+  }
+  30% {
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg);
+  }
+  40% {
+    -webkit-transform: rotate(20deg);
+            transform: rotate(20deg);
+  }
+  50% {
+    -webkit-transform: rotate(170deg);
+            transform: rotate(170deg);
+  }
+  60% {
+    -webkit-transform: rotate(30deg);
+            transform: rotate(30deg);
+  }
+  70% {
+    -webkit-transform: rotate(320deg);
+            transform: rotate(320deg);
+  }
+  80% {
+    -webkit-transform: rotate(40deg);
+            transform: rotate(40deg);
+  }
+  90% {
+    -webkit-transform: rotate(320deg);
+            transform: rotate(320deg);
+  }
+  100% {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+  }
+}
+
+@keyframes dice {
+  0% {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+  }
+  10% {
+    -webkit-transform: rotate(120deg);
+            transform: rotate(120deg);
+  }
+  20% {
+    -webkit-transform: rotate(10deg);
+            transform: rotate(10deg);
+  }
+  30% {
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg);
+  }
+  40% {
+    -webkit-transform: rotate(20deg);
+            transform: rotate(20deg);
+  }
+  50% {
+    -webkit-transform: rotate(170deg);
+            transform: rotate(170deg);
+  }
+  60% {
+    -webkit-transform: rotate(30deg);
+            transform: rotate(30deg);
+  }
+  70% {
+    -webkit-transform: rotate(320deg);
+            transform: rotate(320deg);
+  }
+  80% {
+    -webkit-transform: rotate(40deg);
+            transform: rotate(40deg);
+  }
+  90% {
+    -webkit-transform: rotate(320deg);
+            transform: rotate(320deg);
+  }
+  100% {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+  }
+}
+/*# sourceMappingURL=game.css.map */

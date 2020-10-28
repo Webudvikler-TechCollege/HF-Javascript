@@ -1,0 +1,50 @@
+#game {
+    display: grid;
+    grid-template-rows: repeat(4, 1fr);
+    grid-template-columns: repeat(5, 1fr);  
+
+    div {
+        transform-style: preserve-3d;
+        border: solid 1px #000;
+        margin: -1px -1px 0 0;
+        img {
+            pointer-events: none;
+            user-select: none;
+            opacity: 0;
+            margin: 0 0 -4px 0;
+            transition: all 1s;
+            transform: rotatex(-180deg);        
+        }
+        &.flipped {
+            img {
+                opacity: 1;
+                transform: rotatex(0deg);
+            }
+        }
+        &.closing {
+            img {
+                opacity: 1;
+                transform: rotatex(0deg);    
+            }
+        }
+    }
+}
+
+.winner {
+    position: fixed;
+    background-color: #fff;
+    opacity: 0.3;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    animation: winner 700ms forwards;
+    button {
+      border: none;
+      background-color: transparent;
+      cursor: pointer;
+    }
+  }
+
+
+

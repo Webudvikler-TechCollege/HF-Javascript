@@ -1,0 +1,60 @@
+#game {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-rows: (1fr)[4];
+      grid-template-rows: repeat(4, 1fr);
+  -ms-grid-columns: (1fr)[5];
+      grid-template-columns: repeat(5, 1fr);
+}
+
+#game div {
+  -webkit-transform-style: preserve-3d;
+          transform-style: preserve-3d;
+  border: solid 1px #000;
+  margin: -1px -1px 0 0;
+}
+
+#game div img {
+  pointer-events: none;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+  opacity: 0;
+  margin: 0 0 -4px 0;
+  -webkit-transition: all 1s;
+  transition: all 1s;
+  -webkit-transform: rotatex(-180deg);
+          transform: rotatex(-180deg);
+}
+
+#game div.flipped img {
+  opacity: 1;
+  -webkit-transform: rotatex(0deg);
+          transform: rotatex(0deg);
+}
+
+#game div.closing img {
+  opacity: 1;
+  -webkit-transform: rotatex(0deg);
+          transform: rotatex(0deg);
+}
+
+.winner {
+  position: fixed;
+  background-color: #fff;
+  opacity: 0.3;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  -webkit-animation: winner 700ms forwards;
+          animation: winner 700ms forwards;
+}
+
+.winner button {
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
+}
+/*# sourceMappingURL=memory.css.map */

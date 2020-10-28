@@ -1,0 +1,23 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <script>
+        // Variabel deklareret i det globale scope
+        // Inkluderet i funktionens closure
+        let pet = 'hamster'; 
+
+        function checkPet() {
+            // Kald som refererer til variablen pet
+            console.log(pet);	
+        }
+        //Variabel gentildeles en ny værdi
+        pet = 'goldfish';	
+        checkPet(); // logger 'goldfish'        
+    </script>
+</body>
+</html>

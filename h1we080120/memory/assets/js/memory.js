@@ -1,5 +1,7 @@
+const PATH = '/assets/images/17goals/';
+const BOARD = document.getElementById('game');
 
-const arrGoals = [
+let arrGoals = [
     { 
         goal: 1,
         title_uk: 'No Poverty',
@@ -120,7 +122,66 @@ const arrGoals = [
         description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit...'
     }
 ]
+ 
+const game = {
+    init: function() {
+        const num_cards = 3;
+        const arr_flipped = [];
+        let pairs = 0;
+        arrGoals = arrGoals.slice(0,num_cards);
+        arrGoals = arrGoals.concat(arrGoals);
+        arrGoals.sort(function(a, b){return 0.5 - Math.random()});
 
-console.log(arrGoals);
+        for(let goal of arrGoals) {
+            let card = document.createElement('div');
+            let img = document.createElement('img');
+            img.setAttribute('src',`${PATH}${goal.image}`);
+            card.appendChild(img);
+            card.onclick = function() {                
+                this.classList.add('flipped');
+                arr_flipped.push(this);
+                this.onclick = false;
 
+                if(arr_flipped.length === 2) {
+                    console.log(arr_flipped);
+                    if(arr_flipped[0].innerHTML === arr_flipped[1].innerHTML) {
+                        pairs++; 
 
+                        if(pairs === num_cards) {
+                            game.win();
+                        }
+                        arr_flipped.length = 0;
+                    } else {
+                        setTimeout(function() {
+                            for(let item of arr_flipped) {
+                                item.classList.replace('flipped', 'closing');
+                            }
+                            arr_flipped.length = 0;
+                        },1000, setTimeout(function() {
+                            let toBeRemoved = document.querySelectorAll('.closing');
+                            for(let item of toBeRemoved) {
+                                item.classList.remove('closing');
+                            }
+                        }, 1400))  
+                    }
+                                        
+                }
+            }
+            BOARD.appendChild(card);
+        }
+    },
+    win: function() {
+        let winner = document.createElement('div');
+        winner.classList.add('winner');
+        winner.innerHTML = "<h1>Du har vundet</h1>";
+        document.body.appendChild(winner); 
+    },
+    reset: function() {
+        BOARD.innerHTML = "";
+        winner.remove();
+        pairs = 0;
+        game.init();
+    }
+}
+
+game.init();

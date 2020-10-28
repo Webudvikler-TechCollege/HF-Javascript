@@ -1,0 +1,62 @@
+$light--1: #E0E0E0;
+$light--2: #F5F5F5;
+$light--3: #FAFAFA;
+$light--4: #FFFFFF;
+$primary: #484ba9;
+$danger: #CC575D;
+
+@import "helpers";
+@import "animations";
+@import "game";
+
+//// Header styles:
+header {
+  position: relative;
+  @include flex(block, row, space-between, center, null);
+  width: 70vw;
+  height: 112px;
+  ul {
+    @include flex(block, row, flex-start, center, null);
+    li {
+      margin-left: 5em;
+      &:last-child {
+        font-family: monospace;
+      }
+    }
+  }
+}
+
+//// General styles:
+*,
+*::after,
+*::before {
+  box-sizing: border-box;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-kerning: auto;
+  -webkit-tap-highlight-color: transparent;
+  outline: none;
+}
+
+html {
+  -webkit-text-size-adjust: 100%;
+  font-family: Product Sans, sans-serif;
+}
+
+ul {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+body {
+  @include flex(block, column, center, center, null);
+  min-height: 100vh;
+  margin: 0;
+  background-color: $light--2;
+}
