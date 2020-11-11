@@ -20,12 +20,14 @@ function BusTimeController() {
             // Modtager json objekt fra API'et
             // Egenskaben Departure er et array over kommende bustider    
             // Looper arrayet
+
+            console.log(data.MultiDepartureBoard.Departure);
             for(let item of data.MultiDepartureBoard.Departure) {
                 // Customizer API item model til vores egen model med metoden BusTimeModel
                 // og pusher elementer ind i vores eget model array
                 model.push(BusTimeModel(item));
             }
-    
+
             // Looper custom array model
             for(let item of model) {
                 BusTimeView(item.line, item.date, item.time, item.direction);

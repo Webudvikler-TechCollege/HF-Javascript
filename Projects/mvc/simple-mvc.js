@@ -8,7 +8,7 @@ myController();
  */
 function myController() {
     const data = myModel();
-    const fullname = `${data.firstname} ${data.lastname}`;
+    const fullname = `${data.firstname} ${data.lastname}`;    
     myView(fullname, data.birthday);
 }
 
@@ -31,6 +31,7 @@ function myModel() {
  * @param {string} birthday 
  */
 function myView(name, birthday) {
+    console.log(arguments);
     const div = document.createElement('div');
     div.innerHTML = `<span>${name}</span>
                         <span>${birthday}</span>`;
