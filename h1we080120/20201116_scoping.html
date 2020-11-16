@@ -1,0 +1,22 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Scoping, Hoisting & Closures</title>
+</head>
+<body>
+    <script>
+
+        function outerFunc() {
+            const temp = "Jeg er global";
+            function innerFunc() {
+                console.log(temp);
+            }
+            innerFunc();
+        }
+
+        outerFunc();
+
+    </script>
+</body>
+</html>
