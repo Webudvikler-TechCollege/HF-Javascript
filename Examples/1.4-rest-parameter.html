@@ -12,17 +12,40 @@
 </body>
 
 <script>
-    // Function til at liste en klasse og dens elever med
-    // Tager 2 parametre - et klassenavn og et rest parameter af elevernes fornavn
-    function list(className, ...students) {
-        console.log(className);
-        //console.log(students);
+    /**
+    * REST parameter kan bruges til at repræsentere et 
+    * ubestemt antal argumenter som et array i et funktionskald
+    */
+
+    /**
+     * Gammelt eksempel
+     * Vi deklarerer et array med elever og sender det 
+     * array ind som parameter i en funktion
+     */
+    const students = ['Helle', 'Ib', 'Pia', 'John', 'Bo'];
+
+    function oltimer_list(classname, array_students) {
+        console.log(classname);
+        console.log(array_students);
+    }
+
+    oltimer_list('H1WE080120', students);
+
+
+    /**
+     * Funktion med REST parameter
+     * Function til at liste en klasse og dens elever med
+     * Tager 2 parametre - et klassenavn og et rest parameter 
+     * af et ubestemt antal elevers fornavne
+     */
+    function list(classname, ...students) {
+        console.log(classname);
         for(let n of students) {
             console.log(n);
         }
     }
 
-    console.log(list('H1WE080120', 'Bo', 'Per', 'Lise', 'Hanne'));
+    console.log(list('Bo', 'Per', 'Lise', 'Hanne'));
 
     console.log(list('H1WE080119', 'Michael', 'Trine', 'Jens', 'Peter'));
 
