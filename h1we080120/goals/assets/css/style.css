@@ -7,4 +7,8 @@ svg {
   fill: #fff;
   width: 40%;
 }
+
+a {
+  cursor: pointer;
+}
 /*# sourceMappingURL=style.css.map */

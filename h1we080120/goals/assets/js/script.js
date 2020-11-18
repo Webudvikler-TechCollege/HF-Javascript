@@ -55,11 +55,15 @@ function DetailView({id, title, description, image, color } = data) {
     div.appendChild(h1);
 
     const a = document.createElement('a');
-    a.innerText = 'Oversigt';
+    a.innerHTML = '&laquo; Tilbage til oversigt';
     a.onclick = () => {
         ListController();
     }
     div.appendChild(a);
+
+    const img = document.createElement('img');
+    img.src = image;
+    div.appendChild(img);
 
     const p = document.createElement('p');
     p.innerText = description;
