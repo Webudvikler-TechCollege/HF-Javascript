@@ -16,13 +16,13 @@
 
         const adults = ages.filter(checkAdult);
 
-        console.log(adults);
+        //console.log(adults);
 
         // Eksempel #2: Filtrer strenge værdier på over 6 karakterer
 
         const words = ['spray', 'limit', 'elite', 'exuberant', 'destruction', 'present'];
         const result = words.filter(word => word.length > 6);
-        console.log(result);
+        //console.log(result);
 
         // Eksempel #3: Filtrer værdier som indeholde en søgestreng
 
@@ -34,8 +34,8 @@
             })
         }
 
-        console.log(filterItems(fruits, 'ap'))  // ['apple', 'grapes']
-        console.log(filterItems(fruits, 'an'))  // ['banana', 'mango', 'orange']        
+        //console.log(filterItems(fruits, 'ap'))  // ['apple', 'grapes']
+        //console.log(filterItems(fruits, 'an'))  // ['banana', 'mango', 'orange']        
 
         // Eksempel #4: Filtrer efter bilmærke
 
@@ -51,17 +51,12 @@
             {name: 'Mercedes', model: 'AMG', kml: 12.9, km: 21000, year: 2019, price: 679900}
         ]
 
-        const cars_csv = cars.map((obj, i, arr) => {
-            return obj.name;
-        })
-
-        //console.log(cars);
-
         const filter_by_name = cars.filter(car => car.name === 'Mercedes');
 
         const filter_by_minprice = cars.filter(car => car.price > 200000);
 
         const filter_by_minprice_maxkml = cars.filter(car => (car.price > 200000) && (car.kml > 15));
+        console.log(filter_by_minprice_maxkml);
 
 
     </script>
