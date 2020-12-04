@@ -1,0 +1,69 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // Eksempel #1: Filtrer voksne aldre
+
+        const ages = [32, 33, 16, 40];
+
+        function checkAdult(age) {
+            return age >= 18;
+        }
+
+        const adults = ages.filter(checkAdult);
+
+        console.log(adults);
+
+        // Eksempel #2: Filtrer strenge værdier på over 6 karakterer
+
+        const words = ['spray', 'limit', 'elite', 'exuberant', 'destruction', 'present'];
+        const result = words.filter(word => word.length > 6);
+        console.log(result);
+
+        // Eksempel #3: Filtrer værdier som indeholde en søgestreng
+
+        let fruits = ['apple', 'banana', 'grapes', 'mango', 'orange']
+
+        function filterItems(arr, query) {
+            return arr.filter(function(el) {
+                return el.toLowerCase().indexOf(query.toLowerCase()) !== -1
+            })
+        }
+
+        console.log(filterItems(fruits, 'ap'))  // ['apple', 'grapes']
+        console.log(filterItems(fruits, 'an'))  // ['banana', 'mango', 'orange']        
+
+        // Eksempel #4: Filtrer efter bilmærke
+
+        const cars = [
+            {name: 'Mercedes', model: 'E220', kml: 23.3, km: 138000, year: 2018, price: 439000},
+            {name: 'Honda', model: 'Accord', kml: 11.6, km: 96000, year: 2012, price: 199600},
+            {name: 'Seat', model: 'Tarraco', kml: 18.1, km: 15000, year: 2020, price: 424500},
+            {name: 'VW', model: 'Fox', kml: 14.8, km: 167000, year: 2005, price: 19990},
+            {name: 'Skoda', model: 'Scala', kml: 27.5, km: 8500, year: 2020, price: 244900},
+            {name: 'Jaguar', model: 'F-Type', kml: 11.9, km: 33000, year: 2017, price: 899900},
+            {name: 'Toyota', model: 'Avensis', kml: 16.7, km: 356000, year: 2005, price: 19900},
+            {name: 'VW', model: 'Golf', kml: 19.6, km: 35000, year: 2018, price: 209800},
+            {name: 'Mercedes', model: 'AMG', kml: 12.9, km: 21000, year: 2019, price: 679900}
+        ]
+
+        const cars_csv = cars.map((obj, i, arr) => {
+            return obj.name;
+        })
+
+        //console.log(cars);
+
+        const filter_by_name = cars.filter(car => car.name === 'Mercedes');
+
+        const filter_by_minprice = cars.filter(car => car.price > 200000);
+
+        const filter_by_minprice_maxkml = cars.filter(car => (car.price > 200000) && (car.kml > 15));
+
+
+    </script>
+</body>
+</html>
