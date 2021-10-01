@@ -1,3 +1,4 @@
+@import url("https://fonts.googleapis.com/css2?family=Luckiest+Guy&display=swap");
 @-webkit-keyframes flip-in-card {
   0% {
     -webkit-transform: rotateX(0deg);
@@ -16,7 +17,6 @@
     -webkit-box-shadow: 0 8px 32px 0 rgba(128, 128, 128, 0.4);
   }
 }
-
 @keyframes flip-in-card {
   0% {
     -webkit-transform: rotateX(0deg);
@@ -163,16 +163,17 @@
       grid-template-rows: repeat(4, 1fr);
   -ms-grid-columns: (1fr)[5];
       grid-template-columns: repeat(5, 1fr);
+  grid-gap: 2px;
 }
 
 #game div {
+  background-color: #fff;
   border: solid 1px #000;
   cursor: pointer;
   border-radius: 4px;
   -ms-border-radius: 4px;
   -moz-border-radius: 4px;
   -webkit-border-radius: 4px;
-  background-color: #FFFFFF;
   box-shadow: 0 2px 8px 0 rgba(179, 179, 179, 0.4);
   -ms-box-shadow: 0 2px 8px 0 rgba(179, 179, 179, 0.4);
   -moz-box-shadow: 0 2px 8px 0 rgba(179, 179, 179, 0.4);
@@ -183,10 +184,15 @@
   -webkit-transition: 300ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
+#game div:hover {
+  background-color: #ccc;
+}
+
 #game div img {
   border: solid 1px #000;
   pointer-events: none;
-  width: 80px;
+  cursor: pointer;
+  width: 150px;
   user-drag: none;
   -ms-user-drag: none;
   -moz-user-drag: none;
@@ -195,10 +201,10 @@
   -ms-user-select: none;
   -moz-user-select: none;
   -webkit-user-select: none;
-  transform: scale(1.6) rotateZ(180deg) rotateY(180deg);
-  -ms-transform: scale(1.6) rotateZ(180deg) rotateY(180deg);
-  -moz-transform: scale(1.6) rotateZ(180deg) rotateY(180deg);
-  -webkit-transform: scale(1.6) rotateZ(180deg) rotateY(180deg);
+  transform: scale(1.15) rotateZ(180deg) rotateY(180deg);
+  -ms-transform: scale(1.15) rotateZ(180deg) rotateY(180deg);
+  -moz-transform: scale(1.15) rotateZ(180deg) rotateY(180deg);
+  -webkit-transform: scale(1.15) rotateZ(180deg) rotateY(180deg);
   opacity: 0;
 }
 
@@ -261,49 +267,6 @@
   cursor: pointer;
 }
 
-header {
-  position: relative;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: row;
-          flex-direction: row;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  width: 70vw;
-  height: 112px;
-}
-
-header ul {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: row;
-          flex-direction: row;
-  -webkit-box-pack: start;
-      -ms-flex-pack: start;
-          justify-content: flex-start;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-}
-
-header ul li {
-  margin-left: 5em;
-}
-
-header ul li:last-child {
-  font-family: monospace;
-}
-
 *,
 *::after,
 *::before {
@@ -320,17 +283,7 @@ header ul li:last-child {
 
 html {
   -webkit-text-size-adjust: 100%;
-  font-family: Product Sans, sans-serif;
-}
-
-ul {
-  padding: 0;
-  margin: 0;
-  list-style: none;
-}
-
-a {
-  text-decoration: none;
+  font-family: 'Luckiest Guy';
 }
 
 body {
@@ -347,8 +300,8 @@ body {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  min-height: 100vh;
+  background: url("../images/moroccan-flower-dark.png");
+  color: #fff;
   margin: 0;
-  background-color: #F5F5F5;
 }
 /*# sourceMappingURL=master.css.map */

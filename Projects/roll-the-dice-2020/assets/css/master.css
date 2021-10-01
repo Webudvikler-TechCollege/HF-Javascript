@@ -1,29 +1,74 @@
+@import url("https://fonts.googleapis.com/css2?family=Luckiest+Guy&display=swap");
+body {
+  background-image: url("../images/moroccan-flower-dark.png");
+  font-family: 'Luckiest Guy';
+}
+
+#container {
+  text-align: center;
+  width: 100%;
+  max-width: 1000px;
+  margin: 0 auto;
+  margin-top: 3rem;
+  padding: 2rem;
+  border: solid 10px #000;
+  border-radius: 10px;
+  background-color: rgba(255, 255, 255, 0.4);
+}
+
+h1 {
+  color: white;
+  text-shadow: 2px 1px 5px #000;
+  letter-spacing: 3;
+  font-size: 5vw;
+}
+
 #gameboard {
   overflow: auto;
 }
 
-#gameboard div {
-  font-size: 80pt;
-  text-align: center;
-  float: left;
-  margin-right: 100px;
+#controls {
+  margin: 30px 0;
 }
 
-#gameboard:last-child {
-  clear: both;
+#scoreboard {
+  color: white;
+  text-shadow: 2px 1px 5px #000;
+  letter-spacing: 3;
+  width: 100%;
+  font-weight: bold;
+  font-size: 40pt;
+  margin-top: 40px;
 }
 
 button {
-  width: 100%;
   font-weight: bold;
   font-size: 20pt;
-  padding: 10px;
-  border-radius: 3px;
-  background: #00ffff;
+  padding: 20px 40px;
+  color: #fff;
+  border: solid 1px #000;
+  border-radius: 10px;
+  background: #090;
   cursor: pointer;
 }
 
-@-webkit-keyframes dice {
+button:hover {
+  background: #060;
+}
+
+button:active {
+  background: #600;
+}
+
+.dice {
+  -webkit-animation-name: rolling;
+          animation-name: rolling;
+  -webkit-animation-duration: 0.5s;
+          animation-duration: 0.5s;
+  width: 120px;
+}
+
+@-webkit-keyframes rolling {
   0% {
     -webkit-transform: rotate(0deg);
             transform: rotate(0deg);
@@ -70,7 +115,7 @@ button {
   }
 }
 
-@keyframes dice {
+@keyframes rolling {
   0% {
     -webkit-transform: rotate(0deg);
             transform: rotate(0deg);
@@ -116,4 +161,4 @@ button {
             transform: rotate(0deg);
   }
 }
-/*# sourceMappingURL=game.css.map */
+/*# sourceMappingURL=master.css.map */

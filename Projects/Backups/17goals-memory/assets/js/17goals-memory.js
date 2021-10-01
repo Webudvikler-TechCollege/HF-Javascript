@@ -1,6 +1,5 @@
 const PATH = '/assets/images/17goals/';
 const BOARD = document.getElementById('game');
-
 let arrGoals = [
     { 
         goal: 1,
@@ -126,8 +125,9 @@ let arrGoals = [
 const game = {
     init: () => {
         const flipped = [];
-        const num_cards = 2;
+        const num_cards = 10;
         let pairs = 0;
+        arrGoals.sort(() => Math.random() - 0.5);
         arrGoals = arrGoals.slice(0, num_cards);
         arrGoals = arrGoals.concat(arrGoals);
         shuffleArray(arrGoals);
@@ -137,6 +137,7 @@ const game = {
             card.innerHTML = `<img src="${PATH}${item.image}">`;
             BOARD.appendChild(card);
         }
+
         let cards = BOARD.querySelectorAll('div');
         for(let card of cards) {
             card.onclick = function() {
@@ -146,7 +147,6 @@ const game = {
                     if(flipped[0].innerHTML === flipped[1].innerHTML) {
                         pairs++;
                         flipped.length = 0;
-
                         console.log(pairs);
                         if(pairs === num_cards) {
                             game.win();
@@ -172,7 +172,7 @@ const game = {
     win: () => {
         window.winner = document.createElement('div');
         winner.classList.add('winner');
-        winner.innerHTML = `<h1>You Won</h1> <button onclick='game.reset()'><i class='material-icons'>refresh</i></button>`;
+        winner.innerHTML = `<h1>Du vandt!</h1> <button onclick='game.reset()'><i class='material-icons'>Spil igen</i></button>`;
         var body = document.getElementsByTagName('body');
         body[0].appendChild(winner);
     },

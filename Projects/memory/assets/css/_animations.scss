@@ -1,21 +1,21 @@
 @keyframes flip-in-card {
   0% {
     transform: rotateX(0deg);
-    @include vendor(box-shadow, 0 4px 16px 0 rgba(darken($light--4, 30%), 0.4));
+    @include vendor(box-shadow, 0 4px 16px 0 rgba(darken($light, 30%), 0.4));
   }
   100% {
     transform: rotateX(180deg);
-    @include vendor(box-shadow, 0 8px 32px 0 rgba(darken($light--4, 50%), 0.4));
+    @include vendor(box-shadow, 0 8px 32px 0 rgba(darken($light, 50%), 0.4));
   }
 }
 @keyframes flip-out-card {
   0% {
     transform: rotateX(180deg);
-    @include vendor(box-shadow, 0 8px 32px 0 rgba(darken($light--4, 50%), 0.4));
+    @include vendor(box-shadow, 0 8px 32px 0 rgba(darken($light, 50%), 0.4));
   }
   100% {
     transform: rotateX(0deg);
-    @include vendor(box-shadow, 0 4px 16px 0 rgba(darken($light--4, 30%), 0.4));
+    @include vendor(box-shadow, 0 4px 16px 0 rgba(darken($light, 30%), 0.4));
   }
 
 }

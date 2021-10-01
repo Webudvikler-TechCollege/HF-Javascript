@@ -1,0 +1,90 @@
+@import url('https://fonts.googleapis.com/css2?family=Luckiest+Guy&display=swap');
+
+$primary-color: white;
+
+@mixin text-shadow {
+  color: $primary-color;
+  text-shadow: 2px 1px 5px #000;
+  letter-spacing: 3;
+}
+
+@mixin box-shadow {
+  box-shadow: 2px 1px 5px #000;  
+}
+
+body {
+  background-image: url('../images/moroccan-flower-dark.png');
+  font-family: 'Luckiest Guy';
+}
+
+
+#container {
+  text-align: center;
+  width: 100%;
+  max-width: 1000px;
+  margin: 0 auto;
+  margin-top: 3rem;
+  padding: 2rem;
+  border: solid 10px #000;
+  border-radius: 10px;
+  background-color: rgba(255,255,255, 0.4)
+}
+
+h1 {
+  @include text-shadow();
+  font-size: 5vw;
+}
+
+#gameboard {
+  overflow: auto;
+}
+
+#controls {
+  margin: 30px 0;
+}
+
+#scoreboard {
+  @include text-shadow();
+  width: 100%;
+  font-weight: bold;
+  font-size: 40pt;
+  margin-top: 40px;
+}
+
+button {
+  font-weight: bold;
+  font-size: 20pt;
+  padding: 20px 40px;
+  color: #fff;
+  border: solid 1px #000;
+  border-radius: 10px;
+  background: #090;
+  cursor: pointer;
+  &:hover {
+    background: #060;
+  }
+  &:active {
+    background: #600;
+  }
+}
+
+.dice {
+  animation-name: rolling;
+  animation-duration: 0.5s;
+  width: 120px;
+
+}
+
+@keyframes rolling {
+  0% { transform: rotate(0deg) }
+  10% { transform: rotate(120deg) }
+  20% { transform: rotate(10deg) }
+  30% { transform: rotate(360deg) }
+  40% { transform: rotate(20deg) }
+  50% { transform: rotate(170deg) }
+  60% { transform: rotate(30deg) }
+  70% { transform: rotate(320deg) }
+  80% { transform: rotate(40deg) }
+  90% { transform: rotate(320deg) }
+  100% { transform: rotate(0deg) }
+}

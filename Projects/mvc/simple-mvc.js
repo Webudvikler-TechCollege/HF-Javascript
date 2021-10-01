@@ -31,7 +31,6 @@ function myModel() {
  * @param {string} birthday 
  */
 function myView(name, birthday) {
-    console.log(arguments);
     const div = document.createElement('div');
     div.innerHTML = `<span>${name}</span>
                         <span>${birthday}</span>`;
